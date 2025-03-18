@@ -1,7 +1,6 @@
 from algorithms import dijkstra
 
 dij = dijkstra.Graph(5)
-dij.add_vertex_data
 
 dij.add_vertex_data(0, 'A')
 dij.add_vertex_data(1, 'B')
