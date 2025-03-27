@@ -38,12 +38,7 @@ class Graph:
             _, current = heapq.heappop(open_set)
             
             if current == goal_vertex:
-                path = []
-                while current in came_from:
-                    path.append(self.vertex_data[current])
-                    current = came_from[current]
-                path.append(self.vertex_data[start_vertex])
-                return path[::-1]
+                return g_score[goal_vertex]
             
             for neighbor in range(self.size):
                 if self.adj_matrix[current][neighbor] != 0:
@@ -54,4 +49,4 @@ class Graph:
                         f_score[neighbor] = g_score[neighbor] + self.heuristics[neighbor]
                         heapq.heappush(open_set, (f_score[neighbor], neighbor))
         
-        return None  # No path found
+        return float('inf')  # No path found
