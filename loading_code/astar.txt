@@ -1,5 +1,5 @@
 from algorithms import astar
-aS = bruteforce.Graph(143)
+aS = astar.Graph(143)
 
 aS.add_vertex_data(0,'Jurong East')
 aS.add_vertex_data(1,'Bukit Batok')

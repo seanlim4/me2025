@@ -1,18 +1,18 @@
 import timeit
-repetitions = 10000
+repetitions = 1
 
-with open("bruteforce.txt", 'r') as a:
+with open("loading_code/bruteforce.txt", 'r') as a:
     bfSetup = a.read()
-with open("dijkstra.txt", 'r') as b:
+with open("loading_code/dijkstra.txt", 'r') as b:
     dijSetup = b.read()
-with open("astar.txt", 'r') as c:
+with open("loading_code/astar.txt", 'r') as c:
     aSSetup = c.read()
 
 bfFile = open("data/bf.txt", 'a')
 dijFile = open("data/dij.txt", 'a')
 aSFile = open("data/as.txt", 'a')
 
-for x in range(0, 100):
+for x in range(0, 1):
     bfExec = timeit.timeit(stmt="print(bf.bruteforce('Tiong Bahru'))", setup=bfSetup, number=repetitions) * 1000 / repetitions
     dijExec = timeit.timeit(stmt="print(dij.dijkstra('Tiong Bahru'))", setup=dijSetup, number=repetitions) * 1000 / repetitions
     aSExec = timeit.timeit(stmt="print(aS.astar('Tiong Bahru', 'Changi Airport'))", setup=aSSetup, number=repetitions) * 1000 / repetitions
