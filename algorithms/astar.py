@@ -5,7 +5,7 @@ class Graph:
         self.adj_matrix = [[0] * size for _ in range(size)]
         self.size = size
         self.vertex_data = [''] * size
-        self.heuristics = [0] * size  # Stores heuristic values for A*
+        self.heuristics = [0] * size
 
     def add_edge(self, u, v, weight):
         if 0 <= u < self.size and 0 <= v < self.size:
@@ -49,4 +49,4 @@ class Graph:
                         f_score[neighbor] = g_score[neighbor] + self.heuristics[neighbor]
                         heapq.heappush(open_set, (f_score[neighbor], neighbor))
         
-        return float('inf')  # No path found
+        return float('inf')
